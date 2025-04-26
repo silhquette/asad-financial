@@ -22,11 +22,20 @@ class ProfilePage extends StatelessWidget {
                 margin: const EdgeInsets.all(24),
                 child: Column(
                   children: [
-                    const Padding(
-                        padding: EdgeInsets.all(16),
+                    Padding(
+                        padding: const EdgeInsets.all(16),
                         child: Row(
                           children: [
-                            Text(
+                            Container(
+                              height: 56,
+                              width: 56,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.grey
+                              ),
+                            ),
+                            const SizedBox(width: 12),
+                            const Text(
                               'Muhammad Fadhli',
                               style: TextStyle(
                                 fontSize: 20,
@@ -54,7 +63,7 @@ class ProfilePage extends StatelessWidget {
               child: Row(
                 children: [
                   Expanded(
-                    child: DangerButton(onPressed: () {}, text: 'Keluar'),
+                    child: DangerButton(onPressed: () => Navigator.pushReplacementNamed(context, 'login'), text: 'Keluar'),
                   ),
                   const SizedBox(width: 16),
                   Expanded(
