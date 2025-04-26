@@ -5,16 +5,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:assad_app/pages/finance/receipt_overlay.dart';
 
-class DepositDetail extends StatefulWidget {
-  const DepositDetail({super.key, required this.nominal});
+class WithdrawalDetail extends StatefulWidget {
+  const WithdrawalDetail({super.key, required this.nominal});
 
   final String nominal;
 
   @override
-  State<DepositDetail> createState() => _DepositDetailState();
+  State<WithdrawalDetail> createState() => _WithdrawalDetailState();
 }
 
-class _DepositDetailState extends State<DepositDetail> {
+class _WithdrawalDetailState extends State<WithdrawalDetail> {
 
   OverlayEntry? _overlayEntry;
 
@@ -46,12 +46,12 @@ class _DepositDetailState extends State<DepositDetail> {
                   margin: EdgeInsets.all(24),
                   padding: EdgeInsets.all(24),
                   decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(8),
-                    border: Border.all(
-                      color: Colors.grey,
-                      width: 1,
-                    )
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(
+                        color: Colors.grey,
+                        width: 1,
+                      )
                   ),
                   child: Column(
                     children: [
@@ -64,7 +64,7 @@ class _DepositDetailState extends State<DepositDetail> {
                           color: Color(0xff050B79),
                         ),
                         child: SvgPicture.asset(
-                          'assets/icons/download-svgrepo-com.svg',
+                          'assets/icons/upload-svgrepo-com.svg',
                           colorFilter: const ColorFilter.mode(
                             Colors.white,
                             BlendMode.srcIn,
@@ -75,14 +75,14 @@ class _DepositDetailState extends State<DepositDetail> {
                       const Text(
                         'Total Setor',
                         style: TextStyle(
-                          fontSize: 16
+                            fontSize: 16
                         ),
                       ),
                       Text(
                         widget.nominal,
                         style: const TextStyle(
-                          fontSize: 32,
-                          fontWeight: FontWeight.bold
+                            fontSize: 32,
+                            fontWeight: FontWeight.bold
                         ),
                       ),
                       const SizedBox(height: 60),
@@ -108,35 +108,6 @@ class _DepositDetailState extends State<DepositDetail> {
                           label: 'Status Transaksi',
                           value: transactionStatus(status: 'Berhasil')
                       ),
-                      transactionInfo(
-                          label: 'Detail Penerima',
-                          value: const Column(
-                            children: [
-                              Text(
-                                'Pesantren As\'ad',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                              Text(
-                                '0192 12739123',
-                                style: TextStyle(
-                                    color: Colors.grey
-                                ),
-                              ),
-                            ],
-                          )
-                      ),
-                      transactionInfo(
-                          label: 'Pesan (opsional)',
-                          value: const Text(
-                            'Pembayaran Sewa\nAsrama',
-                            textAlign: TextAlign.right,
-                            style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                            ),
-                          )
-                      ),
                     ],
                   ),
                 ),
@@ -160,10 +131,26 @@ class _DepositDetailState extends State<DepositDetail> {
               ],
             ),
           ),
-          const Spacer(),
-          Padding(
-            padding: const EdgeInsets.all(24.0),
-            child: PrimaryButton(onPressed: _showReceiptOverlay, text: 'Lihat Bukti Setor'),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 24),
+            padding: EdgeInsets.only(top: 24, left: 24, right: 24, bottom: 16),
+            decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(
+                  color: Colors.grey,
+                  width: 1,
+                )
+            ),
+            child: transactionInfo(
+                label: 'Tujuan Penarikan',
+                value: const Text(
+                  'Biaya Asrama',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                  ),
+                )
+            ),
           )
         ],
       ),
@@ -208,8 +195,8 @@ Widget transactionStatus({required String status}) {
 Widget cropCircle() {
   return Container(
     decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        color: Colors.grey.shade200,
+      shape: BoxShape.circle,
+      color: Colors.grey.shade200,
     ),
     height: 24,
     width: 24,

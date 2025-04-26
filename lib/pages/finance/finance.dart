@@ -1,4 +1,5 @@
 import 'package:assad_app/pages/finance/deposit_detail.dart';
+import 'package:assad_app/pages/finance/withdrawal_detail.dart';
 import 'package:assad_app/widget/custom_app_bar.dart';
 import 'package:assad_app/widget/primary_button.dart';
 import 'package:assad_app/widget/transaction_item.dart';
@@ -107,12 +108,12 @@ class FinancePage extends StatelessWidget {
                     ),
                 ),
               ),
-              TransactionItem(status: 'Penarikan', date: '09 Maret 2022', amount: '-Rp 300.000', onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const DepositDetail(nominal: '-Rp 300.000')))),
-              TransactionItem(status: 'Setoran', date: '09 Maret 2022', amount: '+Rp 200.000', onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const DepositDetail(nominal: '-Rp 300.000')))),
-              TransactionItem(status: 'Setoran', date: '09 Maret 2022', amount: '+Rp 500.000', onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const DepositDetail(nominal: '-Rp 300.000')))),
-              TransactionItem(status: 'Penarikan', date: '09 Maret 2022', amount: '-Rp 100.000', onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const DepositDetail(nominal: '-Rp 300.000')))),
-              TransactionItem(status: 'Penarikan', date: '09 Maret 2022', amount: '-Rp 150.000', onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const DepositDetail(nominal: '-Rp 300.000')))),
-              TransactionItem(status: 'Setoran', date: '09 Maret 2022', amount: '+Rp 250.000', onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const DepositDetail(nominal: '-Rp 300.000')))),
+              TransactionItem(status: 'Penarikan', date: '09 Maret 2022', amount: '-Rp 300.000', onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const WithdrawalDetail(nominal: '-Rp 300.000')))),
+              TransactionItem(status: 'Setoran', date: '09 Maret 2022', amount: '+Rp 200.000', onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const DepositDetail(nominal: '+Rp 200.000')))),
+              TransactionItem(status: 'Setoran', date: '09 Maret 2022', amount: '+Rp 500.000', onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const DepositDetail(nominal: '+Rp 500.000')))),
+              TransactionItem(status: 'Penarikan', date: '09 Maret 2022', amount: '-Rp 100.000', onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const WithdrawalDetail(nominal: '-Rp 100.000')))),
+              TransactionItem(status: 'Penarikan', date: '09 Maret 2022', amount: '-Rp 150.000', onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const WithdrawalDetail(nominal: '-Rp 150.000')))),
+              TransactionItem(status: 'Setoran', date: '09 Maret 2022', amount: '+Rp 250.000', onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const DepositDetail(nominal: '+Rp 250.000')))),
               const SizedBox(height: 24)
             ],
           ),
